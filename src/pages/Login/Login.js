@@ -14,12 +14,10 @@ import formData from "../../utils/formFields/login-data.json";
 import users from "../../utils/data/users.json";
 
 function Login() {
-  console.log(users);
   const dispatch = useDispatch();
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
-    role: "",
   });
   const { isDoc, isPatient, isLoggingIn } = useSelector((state) => state.auth);
 
@@ -43,20 +41,29 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(LOGIN_REQUEST());
-    if (
-      users.users.map(
+    let valid = users.users.some(
+      (user) =>
+        user.email.toLowerCase() === loginData.email.toLowerCase() &&
+        user.password === loginData.password
+    );
+
+    let role = "";
+    if (valid) {
+      role = users.users.filter(
         (user) =>
-          user.email.toLowerCase() === loginData.email.toLowerCase() &&
-          user.role === loginData.role.toLowerCase() &&
+          user.email.toLowerCase() === loginData.email &&
           user.password === loginData.password
-      )
-    ) {
-      if (loginData.role.toLowerCase() === "doc") {
+      );
+    }
+
+    if (valid) {
+      if (role["0"].role === "doc") {
         dispatch(DOC_LOGIN_SUCCESS(loginData));
-      } else if (loginData.role.toLowerCase() === "patient") {
+      } else if (role["0"].role === "patient") {
         dispatch(LOGIN_SUCCESS(loginData));
       } else {
         toast.error("invalid Role Entered");
+        console.log(role);
         dispatch(LOGIN_FAILURE());
       }
     } else {

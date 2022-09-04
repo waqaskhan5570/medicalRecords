@@ -18,16 +18,7 @@
         "element_type": "input",
         "input_type" : "password",
         "placeholder" : "Enter Your Password"
-      },
-      {
-        "id"  :3,
-        "name": "role",
-        "label": "Role",
-        "required": true,
-        "element_type": "select",
-        "input_type" : "text",
-        "placeholder" : "User Role",
-        "input_text" : "enter either doc or patient"
       }
+  
     ]   
   }

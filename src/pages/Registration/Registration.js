@@ -14,9 +14,9 @@ import formData from "../../utils/formFields/signup-data.json";
 import users from "../../utils/data/users.json";
 
 function Registration() {
-  console.log(users);
   const dispatch = useDispatch();
   const [loginData, setLoginData] = useState({
+    id: users.users.length + 1,
     email: "",
     password: "",
     role: "",
@@ -43,25 +43,21 @@ function Registration() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch(LOGIN_REQUEST());
-    if (
-      users.users.map(
-        (user) =>
-          user.email.toLowerCase() === loginData.email.toLowerCase() &&
-          user.role === loginData.role.toLowerCase() &&
-          user.password === loginData.password
-      )
-    ) {
+    let found = users.users.some((user) => user.email === loginData.email);
+    if (found) {
+      toast.error("User already Exist");
+      dispatch(LOGIN_FAILURE());
+    } else {
       if (loginData.role.toLowerCase() === "doc") {
+        users.users.push(loginData);
         dispatch(DOC_LOGIN_SUCCESS(loginData));
       } else if (loginData.role.toLowerCase() === "patient") {
+        users.users.push(loginData);
         dispatch(LOGIN_SUCCESS(loginData));
       } else {
         toast.error("invalid Role Entered");
         dispatch(LOGIN_FAILURE());
       }
-    } else {
-      dispatch(LOGIN_FAILURE());
-      toast.error("Invalid Credentials");
     }
   };
 
@@ -74,7 +70,7 @@ function Registration() {
             <div className="d-flex justify-content-center">
               <section className="main-section">
                 <div className="welcome-message">
-                  <h2 className="text-center text-secondary">Log In</h2>
+                  <h2 className="text-center text-secondary">Registration</h2>
                 </div>
                 <div className="m-4">
                   <AuthForm

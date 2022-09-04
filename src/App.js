@@ -10,12 +10,14 @@ import Login from "./pages/Login/Login";
 import Registration from "./pages/Registration/Registration";
 import PatientDashboard from "./pages/PatientDashboard/PatientDashboard";
 import DoctorDashboard from "./pages/DoctorDashboard/DoctorDashboard";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const { isDoc, isPatient } = useSelector((state) => state.auth);
   return (
     <>
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
 
