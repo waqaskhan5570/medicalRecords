@@ -1,0 +1,17 @@
+{
+    "users" : [
+        {
+            "id" :1,
+            "email" :"waqas@gmail.com",
+            "password":"123456",
+            "role":"patient",
+            "recordId" :"1"
+        },
+        {
+            "id" :1,
+            "email" :"yaseen@gmail.com",
+            "password":"123456",
+            "role":"doc"
+        }
+    ]
+}

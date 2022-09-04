@@ -1,0 +1,33 @@
+{
+    "fields" :[
+      {
+        "id"  :1,
+        "name": "email",
+        "label": "Email Address",
+        "placeholder" : "Email Address",
+        "input_text" : "Your Contact wouldn't be shared with anyone",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "email"
+      },
+      {
+        "id"  :2,
+        "name": "password",
+        "label": "Password",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "password",
+        "placeholder" : "Enter Your Password"
+      },
+      {
+        "id"  :3,
+        "name": "role",
+        "label": "Role",
+        "required": true,
+        "element_type": "select",
+        "input_type" : "text",
+        "placeholder" : "User Role",
+        "input_text" : "enter either doc or patient"
+      }
+    ]   
+  }

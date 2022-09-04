@@ -1,0 +1,254 @@
+.Sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.Sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  min-height: 100vh;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.sidebar-header {
+  margin: 20px 10px 10px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-sidebar-btn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  font-size: 24px;
+}
+
+.sidebar-header .sidebar-logo {
+  width: 120px;
+  height: 120px;
+}
+
+.sidebar-header .sidebar-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.Sidebar.slider {
+  left: 0;
+  z-index: 999;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: all 300ms ease;
+}
+
+/* Sidebar => Mobile */
+.Sidebar .Sidebar-Mobile {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  padding-right: 20px;
+}
+
+.Sidebar .timeCircle-btn {
+  display: none;
+  border: none;
+  outline: none !important;
+  font-size: 1.75rem;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+/* Sidebar => Head */
+.Sidebar .Sidebar-Head {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  margin-left: 20px;
+}
+
+.Sidebar.hero .Sidebar-Head {
+  /* background-color: var(--primaryYellowColor); */
+  background-color: #fff;
+}
+
+.Sidebar.angel .Sidebar-Head {
+  background-color: var(--primaryBlueColor);
+}
+
+.Sidebar .Sidebar-Head .tribe-logo {
+  /* margin-top: 10px; */
+  width: 150px;
+  height: 80px;
+}
+
+.Sidebar .Sidebar-Head .name {
+  /* color: #fff; */
+  color: var(--dashboardName);
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin: 1.6rem 0px;
+}
+
+.Sidebar .Sidebar-Head .wrap-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sidebar .Sidebar-Head .wrap-options .option .option-link {
+  /* color: #fff; */
+  color: #000;
+  font-size: 1.75rem;
+}
+
+.Sidebar .Sidebar-Head .wrap-options .option:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.logout_button {
+  border: none;
+  background-color: transparent;
+}
+
+/* Sidebar => Body */
+.Sidebar .Sidebar-Body .navigation {
+  /* margin-top: 16px; */
+  padding-bottom: 2rem;
+}
+
+.Sidebar .Sidebar-Body .navigation .navigation-item {
+  padding: 5px 10px;
+  border-left: 5px solid transparent;
+  margin-bottom: 8%;
+}
+
+.Sidebar .Sidebar-Body .navigation .navigation-item .navigation-link {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  padding-left: 16px;
+  color: #222;
+  text-decoration: none;
+}
+
+.Sidebar
+  .Sidebar-Body
+  .navigation
+  .navigation-item
+  .fundraiser-tabs
+  .fundraiser-item.active
+  > .item-text,
+.Sidebar
+  .Sidebar-Body
+  .navigation
+  .navigation-item
+  .fundraiser-tabs
+  .fundraiser-item.active
+  > .item-icon {
+  color: #232a54;
+}
+
+.Sidebar
+  .Sidebar-Body
+  .navigation
+  .navigation-item
+  .fundraiser-tabs
+  .fundraiser-item
+  .item-text {
+  margin-left: -18px;
+  color: #232a54;
+}
+
+.Sidebar .Sidebar-Body .navigation .navigation-item .fundraiser-tabs {
+  margin-left: 40px;
+}
+
+.fundraiserCause-icon {
+  padding-left: 3.675rem;
+}
+
+.fundraiserEnterprise-icon {
+  padding-left: 1.675rem;
+}
+
+.Sidebar
+  .Sidebar-Body
+  .navigation
+  .navigation-item
+  .navigation-link
+  .item-icon {
+  font-size: 1rem;
+  color: #c0c7d1;
+}
+
+.Sidebar
+  .Sidebar-Body
+  .navigation
+  .navigation-item
+  .navigation-link
+  .item-text {
+  margin-left: 10px;
+  font-size: 0.925rem;
+  color: var(--dashboardName);
+}
+
+.Sidebar.hero .Sidebar-Body .navigation .navigation-link:hover > .item-icon,
+.Sidebar.hero .Sidebar-Body .navigation .navigation-link:hover > .item-text {
+  color: var(--dashboardActive);
+}
+
+.Sidebar.hero .Sidebar-Body .navigation .navigation-link.active > .item-icon,
+.Sidebar.hero .Sidebar-Body .navigation .navigation-link.active > .item-text {
+  color: var(--dashboardActive);
+}
+
+.Sidebar.angel .Sidebar-Body .navigation .navigation-item:hover {
+  border-left: 5px solid var(--primaryBlueColor);
+  background-color: #dadedf;
+}
+
+@media all and (max-width: 1145px) {
+  .fundraiserCause-icon {
+    padding-left: 1.175rem;
+  }
+
+  .fundraiserEnterprise-icon {
+    padding-left: 0rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .Sidebar .timeCircle-btn {
+    display: block;
+  }
+}
+
+@media all and (min-width: 1880px) {
+  .Sidebar {
+    width: 15% !important;
+  }
+
+  .Sidebar
+    .Sidebar-Body
+    .navigation
+    .navigation-item
+    .navigation-link
+    .item-text,
+  .Sidebar
+    .Sidebar-Body
+    .navigation
+    .navigation-item
+    .fundraiser-tabs
+    .fundraiser-item
+    .item-text {
+    font-size: 1.356rem;
+  }
+}

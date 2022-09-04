@@ -1,0 +1,17 @@
+.admin_dashboard {
+  width: 97%;
+}
+
+.admin_dashboard .LeftSide {
+  padding-left: 0px !important;
+}
+
+.admin_dashboard .RightSide .page_body {
+  margin: 1rem 0px;
+}
+
+@media all and (max-width: 991px) {
+  .admin_dashboard .RightSide .top_bar {
+    background-color: var(--yellow);
+  }
+}

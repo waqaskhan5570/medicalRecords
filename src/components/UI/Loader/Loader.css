@@ -1,0 +1,12 @@
+.loaderContainer {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  height: 20px;
+  z-index: 999;
+}
+
+.loaderContainer img {
+  height: 70px;
+  width: 70px;
+}
