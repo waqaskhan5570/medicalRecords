@@ -2,6 +2,15 @@
     "fields" :[
       {
         "id"  :1,
+        "name": "name",
+        "label": "Name",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Enter Your Name"
+      },
+      {
+        "id"  :2,
         "name": "email",
         "label": "Email Address",
         "placeholder" : "Email Address",
@@ -11,7 +20,7 @@
         "input_type" : "email"
       },
       {
-        "id"  :2,
+        "id"  :3,
         "name": "password",
         "label": "Password",
         "required": true,
@@ -20,14 +29,81 @@
         "placeholder" : "Enter Your Password"
       },
       {
-        "id"  :3,
+        "id"  :4,
         "name": "role",
         "label": "Role",
         "required": true,
         "element_type": "select",
         "input_type" : "text",
         "placeholder" : "User Role",
-        "input_text" : "enter either doc or patient"
+        "input_text" : "enter either doc or patient",
+        "options" : ["doc", "patient"]
+      }, 
+      {
+        "id"  :5,
+        "name": "dob",
+        "label": "Date of Birth",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Date of Birth",
+        "input_text" :"Date in Birth in format DD/MM/YYYY"
+      },
+      {
+        "id"  :6,
+        "name": "gender",
+        "label": "Gender",
+        "required": true,
+        "element_type": "select",
+        "input_type" : "text",
+        "placeholder" : "Gender",
+        "options" : ["male", "female"]
+      },
+      {
+        "id"  :7,
+        "name": "pnumber",
+        "label": "Phone Number",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Phone Number"
+      },
+      {
+        "id"  :8,
+        "name": "medicalBackground",
+        "label": "Medical Background",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Medical Background"
+      },
+      {
+        "id"  :9,
+        "name": "nationality",
+        "label": "Nationality",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Country" 
+      },
+      {
+        "id"  :10,
+        "name": "address",
+        "label": "Address",
+        "required": true,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Address"
+      },
+      {
+        "id"  :11,
+        "name": "department", 
+        "label": "Department",
+        "required": false,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Department",
+        "input_text" : "Only For doctors"
       }
     ]   
   }

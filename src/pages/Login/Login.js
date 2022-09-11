@@ -58,9 +58,9 @@ function Login() {
 
     if (valid) {
       if (role["0"].role === "doc") {
-        dispatch(DOC_LOGIN_SUCCESS(loginData));
+        dispatch(DOC_LOGIN_SUCCESS(role));
       } else if (role["0"].role === "patient") {
-        dispatch(LOGIN_SUCCESS(loginData));
+        dispatch(LOGIN_SUCCESS(role));
       } else {
         toast.error("invalid Role Entered");
         console.log(role);

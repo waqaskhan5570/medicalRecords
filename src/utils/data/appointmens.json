@@ -1,0 +1,36 @@
+{
+    "appointments"  : [
+        {
+            "id":1,
+            "docid": 2,
+            "patientid": 1,
+            "date": "12/11/2022",
+            "time": "12pm",
+            "status": "Pending"
+        },
+        {
+            "id":2,
+            "docid": 5,
+            "patientid": 3,
+            "date": "19/11/2022",
+            "time": "3pm",
+            "status": "Pending"
+        },
+        {
+            "id":3,
+            "docid": 2,
+            "patientid": 4,
+            "date": "22/12/2022",
+            "time": "5pm",
+            "status": "Pending"
+        },
+        {
+            "id":4,
+            "docid": 5,
+            "patientid": 1,
+            "date": "18/11/2022",
+            "time": "5pm",
+            "status": "Pending"
+        }
+    ]
+}

@@ -46,17 +46,17 @@ function Sidebar(props) {
           <div className="navigation">
             <div className="navigation-item">
               <Link
-                to="/patient-dashboard/profile"
+                to="/patient-dashboard"
                 className={
-                  window.location.pathname === "/patient-dashboard/profile"
+                  window.location.pathname === "/patient-dashboard"
                     ? "navigation-link active"
                     : "navigation-link"
                 }
               >
                 <div className="item-icon">
-                  <FaThLarge />
+                  <FaCopy />
                 </div>
-                <div className="item-text">Profile</div>
+                <div className="item-text">Dashboard</div>
               </Link>
             </div>
             <div className="navigation-item">
@@ -78,10 +78,9 @@ function Sidebar(props) {
 
             <div className="navigation-item">
               <Link
-                to="/patient-dashboard/my-appointments"
+                to="/patient-dashboard/doctors"
                 className={
-                  window.location.pathname ===
-                  "/patient-dashboard/my-appointments"
+                  window.location.pathname === "/patient-dashboard/doctors"
                     ? "navigation-link active"
                     : "navigation-link"
                 }
@@ -89,7 +88,7 @@ function Sidebar(props) {
                 <div className="item-icon">
                   <MdPostAdd />
                 </div>
-                <div className="item-text">Appointments</div>
+                <div className="item-text">Doctors</div>
               </Link>
             </div>
 
@@ -107,38 +106,6 @@ function Sidebar(props) {
           </div>
         ) : (
           <div className="navigation">
-            <div className="navigation-item">
-              <Link
-                to="/doctor-dashboard/profile"
-                className={
-                  window.location.pathname === "/doctor-dashboard/profile"
-                    ? "navigation-link active"
-                    : "navigation-link"
-                }
-              >
-                <div className="item-icon">
-                  <FaThLarge />
-                </div>
-                <div className="item-text">Profile</div>
-              </Link>
-            </div>
-            <div className="navigation-item">
-              <Link
-                to="/doctor-dashboard/patient-records"
-                className={
-                  window.location.pathname ===
-                  "/doctor-dashboard/patient-records"
-                    ? "navigation-link active"
-                    : "navigation-link"
-                }
-              >
-                <div className="item-icon">
-                  <FaCopy />
-                </div>
-                <div className="item-text">Patient Records</div>
-              </Link>
-            </div>
-
             <div className="navigation-item">
               <Link
                 to="/doctor-dashboard/appointments"

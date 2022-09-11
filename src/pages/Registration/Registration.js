@@ -17,9 +17,16 @@ function Registration() {
   const dispatch = useDispatch();
   const [loginData, setLoginData] = useState({
     id: users.users.length + 1,
+    name: "",
     email: "",
     password: "",
     role: "",
+    dob: "",
+    gender: "",
+    pnumber: "",
+    medicalBackground: "",
+    nationality: "",
+    address: "",
   });
   const { isDoc, isPatient, isLoggingIn } = useSelector((state) => state.auth);
 
@@ -40,7 +47,7 @@ function Registration() {
       };
     });
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(LOGIN_REQUEST());
     let found = users.users.some((user) => user.email === loginData.email);
@@ -61,6 +68,7 @@ function Registration() {
     }
   };
 
+  console.log(loginData);
   return (
     <ContainerLayout>
       {" "}
@@ -77,7 +85,7 @@ function Registration() {
                     data={formData}
                     handleSubmit={handleSubmit}
                     inputChangeHandler={(e) => inputChangeHandler(e)}
-                    btnText="Login"
+                    btnText="Register"
                     loading={isLoggingIn}
                     values={loginData}
                   />

@@ -2,16 +2,76 @@
     "users" : [
         {
             "id" :1,
-            "email" :"waqas@gmail.com",
+            "name":"Yaseen Ghaznavi",
+            "email" :"yasinghaznavi@gmail.com",
             "password":"123456",
             "role":"patient",
-            "recordId" :"1"
+            "dob":"24/10/1998",
+            "gender":"Male",
+            "pnumber":"03359989917",
+            "medicalBackground":"Diabetes",
+            "nationality":"Pakistan",
+            "address":"Peshawar Garden, Peshawar"
         },
         {
             "id" :2,
-            "email" :"yaseen@gmail.com",
+            "name":"Waqas Khan",
+            "email" :"waqas@gmail.com",
             "password":"123456",
-            "role":"doc"
+            "role":"doc",
+            "dob":"02/10/1998",
+            "gender":"Male",
+            "pnumber":"03459989917",
+            "nationality":"Pakistan",
+            "address":"Din Bahar Colony, Peshawar",
+            "department":"Cardiology",
+            "languageSpoken":"Urdu, Pushto, English",
+            "ageGroup":"Adult",
+            "seeingPatients":"Yes",
+            "workingHours":"10am - 6pm"
+        },
+        {
+            "id" :3,
+            "name":"Sultan Farooq",
+            "email" :"sultan@gmail.com",
+            "password":"123456",
+            "role":"patient",
+            "dob":"10/10/1998",
+            "gender":"Male",
+            "pnumber":"03149064123",
+            "medicalBackground":"None",
+            "nationality":"Pakistan",
+            "address":"Hayatabad Phase 3, Peshawar"
+        },
+        {
+            "id" :4,
+            "name":"Noor Ullah",
+            "email" :"noor@gmail.com",
+            "password":"123456",
+            "role":"patient",
+            "dob":"14/08/1998",
+            "gender":"Male",
+            "pnumber":"03362989917",
+            "medicalBackground":"None",
+            "nationality":"Pakistan",
+            "address":"Nistrabad, Peshawar"
+        },
+        {
+            "id" :5,
+            "name":"Shahkaar Uzair",
+            "email" :"shahkaar@gmail.com",
+            "password":"123456",
+            "role":"doc",
+            "dob":"24/06/1998",
+            "gender":"Male",
+            "pnumber":"03338989917",
+            "nationality":"Pakistan",
+            "address":"Warsak Road, Peshawar",
+            "department":"Neurology",
+            "languageSpoken":"Urdu, Pushto, English",
+            "ageGroup":"Adult",
+            "seeingPatients":"No",
+            "workingHours":"10am - 6pm"
         }
     ]
 }
