@@ -7,10 +7,12 @@ import users from "../../utils/data/users.json";
 
 function PatientDashboard(props) {
   const { user } = useSelector((state) => state.auth);
-  let currentUser = user["0"];
+  let currentUser = user;
   let patientApp = appointments.appointments.filter(
-    (app) => app.patientid === currentUser.id
+    (app) => app.patientid === user.id
   );
+
+  console.log(user);
   return (
     <AdminLayout layoutFor={props.layoutFor}>
       <section>
@@ -40,7 +42,7 @@ function PatientDashboard(props) {
                     <td>{app.status}</td>
                   </tr>
                 ))
-              : null}
+              : "NO Appointments Made"}
           </tbody>
         </Table>
       </section>
