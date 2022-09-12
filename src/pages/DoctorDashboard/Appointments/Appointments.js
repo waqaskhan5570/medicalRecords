@@ -3,7 +3,8 @@ import AdminLayout from "../../../components/Layouts/AdminLayout/AdminLayout";
 import { useSelector } from "react-redux";
 import appointments from "../../../utils/data/appointmens.json";
 import users from "../../../utils/data/users.json";
-import { Table } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
+import { createDateAndTimeFromISO } from "../../../utils/helpers";
 
 function Appointments(props) {
   const { user } = useSelector((state) => state.auth);
@@ -25,6 +26,7 @@ function Appointments(props) {
                 <th>Patient</th>
                 <th>Time</th>
                 <th>Status</th>
+                <th>View Record</th>
               </tr>
             </thead>
             <tbody>
@@ -40,8 +42,11 @@ function Appointments(props) {
                             .name
                         }
                       </td>
-                      <td>{app.time}</td>
+                      <td>{createDateAndTimeFromISO(app.time)}</td>
                       <td>{app.status}</td>
+                      <td>
+                        <Button variant="secondary">View</Button>
+                      </td>
                     </tr>
                   ))
                 : null}

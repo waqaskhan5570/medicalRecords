@@ -3,7 +3,7 @@ import { Modal, Button, InputGroup } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import { createDateAndTimeFromISO } from "../../utils/helpers";
 
-function MakeAppointment({
+function ResheduleAppointment({
   show,
   modalClose,
   startDate,
@@ -14,7 +14,7 @@ function MakeAppointment({
     <>
       <Modal show={show} onHide={modalClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Make Appoitment</Modal.Title>
+          <Modal.Title>Reschedule Appoitment</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <InputGroup className="mb-3">
@@ -40,4 +40,4 @@ function MakeAppointment({
   );
 }
 
-export default MakeAppointment;
+export default ResheduleAppointment;

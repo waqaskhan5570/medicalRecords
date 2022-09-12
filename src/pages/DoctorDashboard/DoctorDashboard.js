@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/Layouts/AdminLayout/AdminLayout";
-import users from "../../utils/data/users.json";
 import { Card } from "react-bootstrap";
 import malePlaceHolder from "../../assets/images/male.jpeg";
 import femalePlaceHolder from "../../assets/images/female.jpg";
@@ -10,7 +9,7 @@ function DoctorDashboard(props) {
   const { user } = useSelector((state) => state.auth);
   const [currentUser, setUser] = useState(null);
   useEffect(() => {
-    setUser(user);
+    setUser(user["0"]);
   }, [user]);
 
   return (

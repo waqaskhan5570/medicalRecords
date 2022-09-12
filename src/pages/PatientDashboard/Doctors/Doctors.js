@@ -14,7 +14,7 @@ function Doctors(props) {
   let currentUser = user["0"];
   let docs = users.users.filter((user) => user.role === "doc");
   const [show, setShow] = useState(false);
-  const [time, setTime] = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
   const [selectedDoc, setSelectedDoc] = useState(null);
 
   const modalOpen = (id) => {
@@ -24,16 +24,16 @@ function Doctors(props) {
   const modalClose = () => {
     setShow(false);
     setSelectedDoc(null);
-    setTime(null);
+    setStartDate(null);
   };
 
   const handleSubmit = () => {
-    if (time && selectedDoc) {
+    if (startDate && selectedDoc) {
       appointments.appointments.push({
         id: appointments.length + 1,
         docid: selectedDoc,
         patientid: currentUser.id,
-        time: time,
+        time: startDate,
         status: "Pending",
       });
       toast.success("Appointment Created");
@@ -81,8 +81,8 @@ function Doctors(props) {
         <MakeAppointment
           show={show}
           modalClose={modalClose}
-          time={time}
-          setTime={setTime}
+          startDate={startDate}
+          setStartDate={setStartDate}
           handleSubmit={handleSubmit}
         />
       </section>
