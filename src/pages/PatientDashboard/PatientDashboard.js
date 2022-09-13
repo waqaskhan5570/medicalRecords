@@ -10,6 +10,7 @@ import AddMedicalRecord from "../../components/AddMedicalRecord/AddMedicalRecord
 import { toast } from "react-toastify";
 import { createDateAndTimeFromISO } from "../../utils/helpers";
 import ResheduleAppointment from "../../components/ResheduleAppointment/ResheduleAppointment";
+import UpdatePatientInfo from "../../components/UpdatePatientInfo/UpdatePatientInfo";
 
 function PatientDashboard(props) {
   const { user } = useSelector((state) => state.auth);
@@ -19,6 +20,8 @@ function PatientDashboard(props) {
   const [appId, setAppId] = useState(null);
   const [appShow, setAppShow] = useState(false);
   const [startDate, setStartDate] = useState(new Date());
+  const [updateShow, setUpdateShow] = useState(false);
+  const [inputs, setInputs] = useState({});
 
   const modalClose = () => {
     setShow(false);
@@ -35,6 +38,13 @@ function PatientDashboard(props) {
   const appModalClose = () => {
     setAppShow(false);
     setAppId(null);
+  };
+
+  const updateModalOpen = () => {
+    setUpdateShow(true);
+  };
+  const updateModalClose = () => {
+    setUpdateShow(false);
   };
 
   const handleSubmit = () => {
@@ -54,8 +64,9 @@ function PatientDashboard(props) {
   };
 
   useEffect(() => {
-    setUser(user["0"]);
-  }, [user]);
+    const selected = users.users.filter((us) => us.id === user["0"].id);
+    setUser(selected["0"]);
+  }, [user, show]);
 
   useEffect(() => {
     if (currentUser) {
@@ -66,6 +77,43 @@ function PatientDashboard(props) {
       );
     }
   }, [currentUser, user]);
+
+  const handleUpdateSubmit = () => {
+    for (const obj of users.users) {
+      if (obj.id === currentUser.id) {
+        if (inputs.email && inputs.email.length > 0) {
+          obj.email = inputs.email;
+          toast.success("Email Updated");
+        }
+
+        if (inputs.pnumber && inputs.pnumber.length > 0) {
+          obj.pnumber = inputs.pnumber;
+          toast.success("Phone Updated");
+        }
+
+        if (inputs.newPassword && inputs.newPassword.length > 0) {
+          if (inputs.oldPassword === obj.password) {
+            obj.password = inputs.newPassword;
+            toast.success("Password Updated");
+          } else {
+            toast.error("Incorrect old password, Password didn't Change");
+          }
+        }
+        break;
+      }
+    }
+    updateModalClose();
+  };
+
+  const inputChangeHandler = (event) => {
+    const { name, value } = event.target;
+    setInputs((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
 
   return (
     <AdminLayout layoutFor={props.layoutFor}>
@@ -89,6 +137,9 @@ function PatientDashboard(props) {
                     <Card.Text>{currentUser.email}</Card.Text>
                     <Card.Text>{currentUser.gender}</Card.Text>
                     <Card.Text>{currentUser.pnumber}</Card.Text>
+                    <Button variant="outline-warning" onClick={updateModalOpen}>
+                      Update
+                    </Button>
                   </Card.Body>
                 </Card>
               )}
@@ -151,6 +202,12 @@ function PatientDashboard(props) {
         handleSubmit={reschedule}
         startDate={startDate}
         setStartDate={setStartDate}
+      />
+      <UpdatePatientInfo
+        show={updateShow}
+        closeModal={updateModalClose}
+        handleUpdateSubmit={handleUpdateSubmit}
+        inputChangeHandler={inputChangeHandler}
       />
     </AdminLayout>
   );

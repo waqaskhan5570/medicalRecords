@@ -28,7 +28,8 @@
             "languageSpoken":"Urdu, Pushto, English",
             "ageGroup":"Adult",
             "seeingPatients":"Yes",
-            "workingHours":"10am - 6pm"
+            "workingHours":"10am - 6pm",
+            "bio":"Hi, I am a Cardiologist. I completed my MBBS from Khyber Medical College and for specialization I went to Cambridge University."
         },
         {
             "id" :3,
@@ -71,7 +72,8 @@
             "languageSpoken":"Urdu, Pushto, English",
             "ageGroup":"Adult",
             "seeingPatients":"No",
-            "workingHours":"10am - 6pm"
+            "workingHours":"10am - 6pm",
+            "bio":"Hi, I am a Neurologist. I completed my MBBS from Khyber Medical College and for specialization I went to University of Toronto."
         }
     ]
 }

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import AdminLayout from "../../../components/Layouts/AdminLayout/AdminLayout";
 import { useSelector } from "react-redux";
 import appointments from "../../../utils/data/appointmens.json";
 import users from "../../../utils/data/users.json";
 import { Table, Button } from "react-bootstrap";
 import { createDateAndTimeFromISO } from "../../../utils/helpers";
+import ViewRecord from "../../../components/ViewRecord/ViewRecord";
 
 function Appointments(props) {
   const { user } = useSelector((state) => state.auth);
@@ -12,6 +13,13 @@ function Appointments(props) {
   let docApp = appointments.appointments.filter(
     (app) => app.docid === currentUser.id
   );
+  const [show, setShow] = useState(false);
+  const modalOpen = () => {
+    setShow(true);
+  };
+  const modalClose = () => {
+    setShow(false);
+  };
 
   return (
     <AdminLayout layoutFor={props.layoutFor}>
@@ -45,7 +53,9 @@ function Appointments(props) {
                       <td>{createDateAndTimeFromISO(app.time)}</td>
                       <td>{app.status}</td>
                       <td>
-                        <Button variant="secondary">View</Button>
+                        <Button variant="secondary" onClick={modalOpen}>
+                          View
+                        </Button>
                       </td>
                     </tr>
                   ))
@@ -54,6 +64,7 @@ function Appointments(props) {
           </Table>
         </main>
       </section>
+      <ViewRecord show={show} modalClose={modalClose} />
     </AdminLayout>
   );
 }

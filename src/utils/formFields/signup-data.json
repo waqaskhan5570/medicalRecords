@@ -37,7 +37,8 @@
         "input_type" : "text",
         "placeholder" : "User Role",
         "input_text" : "enter either doc or patient",
-        "options" : ["doc", "patient"]
+        "options" : ["doc", "patient"],
+        "default": "doc"
       }, 
       {
         "id"  :5,
@@ -57,7 +58,8 @@
         "element_type": "select",
         "input_type" : "text",
         "placeholder" : "Gender",
-        "options" : ["male", "female"]
+        "options" : ["male", "female"],
+        "default": "male"
       },
       {
         "id"  :7,
@@ -103,6 +105,16 @@
         "element_type": "input",
         "input_type" : "text",
         "placeholder" : "Department",
+        "input_text" : "Only For doctors"
+      },
+      {
+        "id"  :12,
+        "name": "bio", 
+        "label": "Bio",
+        "required": false,
+        "element_type": "input",
+        "input_type" : "text",
+        "placeholder" : "Enter Your Bio",
         "input_text" : "Only For doctors"
       }
     ]   

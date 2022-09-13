@@ -32,6 +32,7 @@ function AuthForm(props) {
                 type={field.input_type}
                 required={field.required}
                 name={field.name}
+                defaultValue={field.default}
               >
                 {field.options.map((option, index) => (
                   <option key={index} value={option}>
