@@ -66,6 +66,8 @@ function Doctors(props) {
                     <Card.Text>{doc.gender}</Card.Text>
                     <Card.Text>{doc.pnumber}</Card.Text>
                     <Card.Text>{doc.department}</Card.Text>
+                    <Card.Text>{doc.bio}</Card.Text>
+
                     <Button
                       variant="secondary"
                       onClick={() => modalOpen(doc.id)}
