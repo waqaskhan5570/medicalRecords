@@ -1,10 +1,3 @@
-function generateDefaultCustomUrlFromTitle(template) {
-  console.log(
-    template.split(" ").join("-").split("--").join("-").toLowerCase()
-  );
-  return template.split(" ").join("-").split("--").join("-").toLowerCase();
-}
-
 function createDateAndTimeFromISO(dateTimeInISO) {
   try {
     let year = dateTimeInISO.getFullYear();
@@ -31,34 +24,4 @@ function createDateAndTimeFromISO(dateTimeInISO) {
   }
 }
 
-function validateEmail(mail) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-    return true;
-  }
-  return false;
-}
-
-function validateCNIC(cnic) {
-  const test = /^[0-9]{5}-[0-9]{7}-[0-9]$/g.test(cnic);
-  if (!test) {
-    return false;
-  }
-  return test;
-}
-
-function validatePhoneNumber(number) {
-  var test = /^\d{11}$/g.test(number);
-  if (!test) {
-    return false;
-  }
-
-  return test;
-}
-
-export {
-  generateDefaultCustomUrlFromTitle,
-  createDateAndTimeFromISO,
-  validateEmail,
-  validateCNIC,
-  validatePhoneNumber,
-};
+export { createDateAndTimeFromISO };
