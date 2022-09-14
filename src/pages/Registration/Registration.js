@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ContainerLayout from "../../components/Layouts/ContainerLayout/ContainerLayout";
-import { Navigate, Link } from "react-router-dom";
+import { Navigate, Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   LOGIN_SUCCESS,
@@ -14,6 +14,7 @@ import formData from "../../utils/formFields/signup-data.json";
 import users from "../../utils/data/users.json";
 
 function Registration() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [loginData, setLoginData] = useState({
     id: users.users.length + 1,
@@ -49,7 +50,7 @@ function Registration() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(LOGIN_REQUEST());
+    // dispatch(LOGIN_REQUEST());
     let found = users.users.some((user) => user.email === loginData.email);
     if (found) {
       toast.error("User already Exist");
@@ -57,18 +58,21 @@ function Registration() {
     } else {
       if (loginData.role.toLowerCase() === "doc") {
         users.users.push(loginData);
-        dispatch(DOC_LOGIN_SUCCESS(loginData));
+        // dispatch(DOC_LOGIN_SUCCESS(loginData));
+        toast.success("Account Created, Log IN Now");
+        navigate("/");
       } else if (loginData.role.toLowerCase() === "patient") {
         users.users.push(loginData);
-        dispatch(LOGIN_SUCCESS(loginData));
+        // dispatch(LOGIN_SUCCESS(loginData));
+        toast.success("Account Created, Log IN Now");
+        navigate("/");
       } else {
         toast.error("invalid Role Entered");
-        dispatch(LOGIN_FAILURE());
+        // dispatch(LOGIN_FAILURE());
       }
     }
   };
 
-  console.log(loginData);
   return (
     <ContainerLayout>
       {" "}
